@@ -1,0 +1,21 @@
+name: "Setup Environment Variable"
+description: "Setup Environment Variable Re-usable Github Action"
+inputs:
+  input1:
+    description: 'Description of input1.'
+    required: true
+    default: 'default-value'
+
+outputs:
+  output1:
+    description: 'Description of output1.'
+    value: 'xyz'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run the script
+      id: script
+      shell: bash
+      run: |
+        echo "::set-output name=output1::abc"
